@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
+const path = require("path");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -19,6 +20,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use("/profilePic", express.static("profilePic"));
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get('*', (req,res)=>{
+  res.sendFile("./client/build/index.html");
+})
 
 app.post("/signup", upload.single("profilePic"), async (req, res) => {
   try {
@@ -81,6 +87,8 @@ let schemaObject = new mongoose.Schema({
 });
 
 let schemaClass = new mongoose.model("user", schemaObject, "postData");
+
+
 
 let dataBaseConnection = () => {
   try {

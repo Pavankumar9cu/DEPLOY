@@ -34,7 +34,7 @@ function Signup() {
       body: JSONDataSend,
     };
 
-    let JSONData = await fetch("http://localhost:1001/signup", reqOptions);
+    let JSONData = await fetch("/signup", reqOptions);
     let JSOData = await JSONData.json();
     console.log(JSOData);
   };
@@ -57,7 +57,7 @@ function Signup() {
       headers: myHeaders,
       body: URLDataSend,
     };
-    let JSONData = await fetch("http://localhost:1001/signup", reqOptions);
+    let JSONData = await fetch("/signup", reqOptions);
     let JSOData = await JSONData.json();
     alert(JSOData.msg);
   };
@@ -81,7 +81,7 @@ function Signup() {
 
       body: formDataSend,
     };
-    let JSONData = await fetch("http://localhost:1001/signup", reqOptions);
+    let JSONData = await fetch("/signup", reqOptions);
     let JSOData = await JSONData.json();
     alert(JSOData.msg);
   };

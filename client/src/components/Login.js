@@ -17,7 +17,7 @@ function Login() {
       method : "POST",
       body   : formDataSend,
     };
-    let JSONData = await fetch("http://localhost:1001/login", reqOptions);
+    let JSONData = await fetch("/login", reqOptions);
     let JSOData = await JSONData.json();
     if (JSOData.status == "success") {
       dispatch({ type: "login", data: JSOData.data });

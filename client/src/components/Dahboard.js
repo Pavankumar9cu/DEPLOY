@@ -13,7 +13,7 @@ function Dahboard() {
         <TopNavigation></TopNavigation>
       <h1>Dashboars</h1>
       <h2>{storeObj.loggedInUser.firstName} {storeObj.loggedInUser.lastName}</h2>
-      <img src={`http://localhost:1001/${storeObj.loggedInUser.profilePic}`} ></img>
+      <img src={`/${storeObj.loggedInUser.profilePic}`} ></img>
 
     </div>
   )
