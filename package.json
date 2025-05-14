@@ -4,8 +4,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "yarn --cwd ./client install && yarn --cwd ./client build && yarn install"
+    
+    "build": "yarn --cwd ./client install && yarn --cwd ./client build && yarn install",
+    "start": "node --max-old-space-size=4096 app.js"
   },
   "keywords": [],
   "author": "",
